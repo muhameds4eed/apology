@@ -23,4 +23,17 @@ if (noBtn) {
         // noBtn.style.left = x + 'px'; 
         // noBtn.style.top = y + 'px';
     });
+} 
+
+// Logic for the selectable photo grid
+const photoSlots = document.querySelectorAll('.photo-slot');
+
+// Check if the photo slots exist on the page before adding listeners
+if (photoSlots.length > 0) {
+    photoSlots.forEach(slot => {
+        slot.addEventListener('click', function() {
+            // Toggles the 'selected' class on the clicked photo
+            this.classList.toggle('selected');
+        });
+    });
 }
